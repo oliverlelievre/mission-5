@@ -89,17 +89,20 @@
   gap: 20px;
 }
 
-.propertyDetailsPrice > h1 {
+.propertyDetailsPrice__title {
   font-size: 18px;
   color: #555;
 }
-.propertyDetailsPrice > span {
+
+.propertyDetailsPrice__description {
   font-size: 14px;
 }
-.propertyDetailsPrice > h2 {
+
+.propertyDetailsPrice__price {
   font-weight: 300;
 }
-.propertyDetailsPrice > button {
+
+.propertyDetailsPrice__button {
   border: none;
   padding: 10px 20px;
   background-color: #0071c2;

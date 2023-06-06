@@ -21,29 +21,30 @@
   height: max-content;
 }
 
-.lsTitle{
+.listSearch__title {
   font-size: 20px;
   color: #555;
   margin-bottom: 10px;
 }
 
-.lsItem{
+.listSearch__item {
   display: flex;
   flex-direction: column;
   gap: 5px;
   margin-bottom: 10px;
 }
 
-.lsItem>label{
+.listSearch__item>label {
   font-size: 12px;
 }
 
-.lsItem>input{
+.listSearch__item>input {
   height: 30px;
   border: none;
   padding: 5px;
 }
-.lsItem>span{
+
+.listSearch__item>span {
   height: 30px;
   padding: 5px;
   background-color: white;
@@ -52,11 +53,11 @@
   cursor: pointer;
 }
 
-.lsOptions{
+.listSearch__options {
   padding: 10px;
 }
 
-.lsOptionItem{
+.listSearch__optionItem {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -64,11 +65,11 @@
   font-size: 12px;
 }
 
-.lsOptionInput{
+.listSearch__optionInput {
   width: 50px;
 }
 
-.listSearch>button{
+.listSearch__button {
   padding: 10px;
   background-color: #0071c2;
   color: white;

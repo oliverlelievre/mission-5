@@ -1,4 +1,4 @@
-import "./property.css";
+import "./property.scss";
 import React, { useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -64,73 +64,73 @@ const Property = () => {
   };
 
   return (
-    <div>
-      <Navbar />
-      <Header type="list" />
+    <div className="property">
+      <Navbar className="property__navbar" />
+      <Header type="list" className="property__header" />
       {loading ? (
-        <p>Loading...</p>
+        <p className="property__loading">Loading...</p>
       ) : (
-        <div className="propertyContainer">
+        <div className="property__container">
           {open && (
-            <div className="slider">
+            <div className="property__slider">
               <FontAwesomeIcon
                 icon={faCircleXmark}
-                className="close"
+                className="property__close"
                 onClick={() => setOpen(false)}
               />
               <FontAwesomeIcon
                 icon={faCircleArrowLeft}
-                className="arrow"
+                className="property__arrow"
                 onClick={() => handleMove("l")}
               />
-              <div className="sliderWrapper">
+              <div className="property__sliderWrapper">
                 <img
                   src={data.photos[slideNumber]}
                   alt=""
-                  className="sliderImg"
+                  className="property__sliderImg"
                 />
               </div>
               <FontAwesomeIcon
                 icon={faCircleArrowRight}
-                className="arrow"
+                className="property__arrow"
                 onClick={() => handleMove("r")}
               />
             </div>
           )}
-          <div className="propertyWrapper">
-            <button className="bookNow" onClick={handleClick}>
+          <div className="property__wrapper">
+            <button className="property__bookNow" onClick={handleClick}>
               Book a viewing or Enquire!
             </button>
-            <h1 className="propertyTitle">{data.name}</h1>
-            <div className="propertyAddress">
+            <h1 className="property__propertyTitle">{data.name}</h1>
+            <div className="property__propertyAddress">
               <FontAwesomeIcon icon={faLocationDot} />
               <span>{data.address}</span>
             </div>
-            <span className="propertyDistance">
+            <span className="property__propertyDistance">
               Excellent location – {data.distance}m from center
             </span>
-            <span className="propertyPriceHighlight">
+            <span className="property__propertyPriceHighlight">
               Book a stay over ${data.roomPrice} at this property and get a
-              free airport taxi
+              Available Now!
             </span>
-            <div className="propertyImages">
+            <div className="property__propertyImages">
               {data.photos?.map((photo, i) => (
-                <div className="propertyImgWrapper" key={i}>
+                <div className="property__propertyImgWrapper" key={i}>
                   <img
                     onClick={() => handleOpen(i)}
                     src={photo}
                     alt=""
-                    className="propertyImg"
+                    className="property__propertyImg"
                   />
                 </div>
               ))}
             </div>
-            <div className="propertyDetails">
-              <div className="propertyDetailsTexts">
-                <h1 className="propertyTitle">{data.title}</h1>
-                <p className="propertyDesc">{data.description}</p>
+            <div className="property__propertyDetails">
+              <div className="property__propertyDetailsTexts">
+                <h1 className="property__propertyTitle">{data.title}</h1>
+                <p className="property__propertyDesc">{data.description}</p>
               </div>
-              <div className="propertyDetailsPrice">
+              <div className="property__propertyDetailsPrice">
                 <h1>Listed {data.createdAt} </h1>
                 <span>
                   Located in the real heart of Krakow, this property has an
@@ -139,15 +139,13 @@ const Property = () => {
                 <h2>
                   <b>${data.roomPrice}</b>
                 </h2>
-                  <button onClick={() => setOpenModal(true)}>Book a viewing or Enquire</button>
-<ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} id={id} />
-
-
+                <button onClick={() => setOpenModal(true)}>Book a viewing or Enquire</button>
+                <ContactModal isOpen={openModal} onClose={() => setOpenModal(false)} id={id} />
               </div>
             </div>
           </div>
-          <MailList />
-          <Footer />
+          <MailList className="property__mailList" />
+          <Footer className="property__footer" />
         </div>
       )}
     </div>
@@ -155,3 +153,4 @@ const Property = () => {
 };
 
 export default Property;
+
