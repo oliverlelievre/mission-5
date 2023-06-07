@@ -1,6 +1,8 @@
 import useFetch from "../../hooks/useFetch";
 import "../../styles/_about.scss";
 
+const video = "https://metronz.co.nz/wp-content/uploads/2020/06/MRENZ_41BEACH_FINAL.mov"
+
 const About = () => {
 
   return (
@@ -8,7 +10,7 @@ const About = () => {
      <h4 className="About--heading">METRO NZ - AUCKLAND PROPERTY MANAGEMENT COMPANY</h4>
 
      <div className="About--contents">
-      <video controls height="350px" className="video" src={video}></video>
+      <video controls height="350px" className="video" src={video} type="video/mov"></video>
       <p1 className="About--contents1P">We excel in property management tasks, going above and beyond to deliver exceptional service. One of our unique offerings is arranging property staging, which attracts high-quality tenants. Our specialized leasing team implements a rigorous tenant selection process, leaving no room for compromise. Our obligation-free appraisals guarantee the best returns for property owners. With extensive knowledge of the Central Auckland, Auckland suburbs, and other areas in New Zealand, we effectively manage properties and understand the market.</p1>
       </div>
 
