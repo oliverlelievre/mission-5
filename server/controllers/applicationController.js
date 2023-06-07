@@ -70,3 +70,4 @@ export const getAllApplications = async (req, res, next) => {
     next(error);
   }
 };
+

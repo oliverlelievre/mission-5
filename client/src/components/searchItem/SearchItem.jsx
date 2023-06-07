@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./searchItem.css";
+import "../../styles/_searchItem.scss";
 
 const SearchItem = ({ item }) => {
     if (!item) {
@@ -27,7 +27,7 @@ const SearchItem = ({ item }) => {
           <button>{item.rating}</button>
         </div>}
         <div className="siDetailTexts">
-          <span className="siPrice">${item.roomPrice}</span>
+          <span className="siPrice">${item.roomPrice}/per week</span>
           <span className="siTaxOp">Includes taxes and fees</span>
           <Link to={`http://localhost:3000/properties/${item._id}`}>
             <button className="siCheckButton">See availability</button>

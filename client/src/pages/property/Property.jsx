@@ -12,7 +12,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import useFetch from "../../hooks/useFetch";
 import Navbar from "../../components/navbar/Navbar";
-import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
 import ContactModal from "../../components/ContactModal/ContactModal";
 import Footer from "../../components/footer/Footer";
@@ -66,7 +65,6 @@ const Property = () => {
   return (
     <div>
       <Navbar />
-      <Header type="list" />
       {loading ? (
         <p>Loading...</p>
       ) : (
@@ -146,7 +144,6 @@ const Property = () => {
               </div>
             </div>
           </div>
-          <MailList />
           <Footer />
         </div>
       )}

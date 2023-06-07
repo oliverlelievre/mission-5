@@ -1,12 +1,13 @@
-import "./list.css";
+import "../../styles/_list.scss";
 import Navbar from "../../components/navbar/Navbar";
-import Header from "../../components/header/Header";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../../components/searchItem/SearchItem";
 import useFetch from "../../hooks/useFetch";
+import Footer from "../../components/footer/Footer";
+import HomeContact from "../../components/homeContact/homeContact";
 
 const List = () => {
   const location = useLocation();
@@ -28,11 +29,10 @@ const List = () => {
   return (
     <div>
       <Navbar />
-      <Header type="list" />
       <div className="listContainer">
         <div className="listWrapper">
           <div className="listSearch">
-            <h1 className="lsTitle">Search</h1>
+            <h1 className="lsTitle">Filters</h1>
             <div className="lsItem">
               <label>Destination</label>
               <input placeholder={destination} type="text" />
@@ -67,7 +67,7 @@ const List = () => {
                   <input type="number" onChange={e=>setMax(e.target.value)} className="lsOptionInput" />
                 </div>
                 <div className="lsOptionItem">
-                  <span className="lsOptionText">Adult</span>
+                  <span className="lsOptionText">Bedrooms</span>
                   <input
                     type="number"
                     min={1}
@@ -76,7 +76,7 @@ const List = () => {
                   />
                 </div>
                 <div className="lsOptionItem">
-                  <span className="lsOptionText">Children</span>
+                  <span className="lsOptionText">Bathrooms</span>
                   <input
                     type="number"
                     min={0}
@@ -85,7 +85,7 @@ const List = () => {
                   />
                 </div>
                 <div className="lsOptionItem">
-                  <span className="lsOptionText">Room</span>
+                  <span className="lsOptionText">Rooms</span>
                   <input
                     type="number"
                     min={1}
@@ -100,7 +100,6 @@ const List = () => {
           <div className="listResult">
             {loading ? "loading" : <>
               {data.map(item => (
-                
                 <SearchItem item={item}  key={item._id}/>
               ))}
             </>}
@@ -108,6 +107,8 @@ const List = () => {
           </div>
         </div>
       </div>
+      <HomeContact/>
+      <Footer />
     </div>
   );
 };

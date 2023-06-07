@@ -1,24 +1,27 @@
 import Featured from "../../components/featured/Featured";
-import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties";
+import Blog from "../../components/blog/Blog";
 import Footer from "../../components/footer/Footer";
-import Header from "../../components/header/Header";
-import MailList from "../../components/mailList/MailList";
+import Hero from "../../components/hero/hero";
 import Navbar from "../../components/navbar/Navbar";
-import PropertyList from "../../components/propertyList/PropertyList";
-import "./home.css";
+import About from "../../components/about/About";
+import Response from "../../components/response/Response"
+import HomeContact from "../../components/homeContact/homeContact"
+
+import "../../styles/styles.scss";
 
 const Home = () => {
   return (
     <div>
       <Navbar />
-      <Header/>
+      <Hero/>
       <div className="homeContainer">
         <Featured/>
-        <h1 className="homeTitle">Browse by property type</h1>
-        <PropertyList/>
-        <h1 className="homeTitle">Homes guests love</h1>
-        <FeaturedProperties/>
-        <MailList/>
+        <div className="homeContainer--About">
+        <About/>
+        </div>
+        <Blog/>
+        <Response />
+        <HomeContact />
         <Footer/>
       </div>
     </div>
